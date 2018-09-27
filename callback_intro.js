@@ -12,5 +12,3 @@ function actionWhenFound(indexPosition) {
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
 
-
-
