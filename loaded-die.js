@@ -1,20 +1,21 @@
-function makeIdGenerator() {
-  var id = 0;
+//
 
-  // The following is the closure function
+
+
+function makeLoadedDie() {
+  var list = [5, 4, 6, 1, 6, 4, 2, 3, 3, 5];
+  /* your code here */
+  var counter = 0;
+
   return function() {
+    /* your code here */
+    return list[counter++];
 
-    Math.floor(Math.random(id) * 100);
-    // This inner function accesses and assigns the value of
-    // the variable id, which was defined in the parent function
-    id += 1;
-    return id;
   }
 }
 
-// makeIdGenerator returns a function which is assigned to
-// the variable nextId
-var nextId = makeIdGenerator();
+var rollLoadedDie = makeLoadedDie();
 
-console.log(nextId()); // Logs: 1
-console.log(nextId()); // Logs: 2
+console.log(rollLoadedDie());  // 5 counter = 0 - 5 counter = 1
+console.log(rollLoadedDie());  // 4 counter = 1 - 4 counter = 2
+console.log(rollLoadedDie());  // 6 counter = 2 - 6 counter = 3
